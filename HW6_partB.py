@@ -6,4 +6,6 @@ url = "http://py4e-data.dr-chuck.net/known_by_Fikret.html"
 html = urllib.request.urlopen(url).read()
 soup = BeautifulSoup(html, 'html.parser')
 tags = soup('a')
-print (tags)
+for tag in tags:
+	print (tag.get('href', None))
+	
